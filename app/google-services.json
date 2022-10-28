@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "307706485095",
+    "project_id": "vincent-a7b66",
+    "storage_bucket": "vincent-a7b66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307706485095:android:d6ad3c7d9c912cbf56f7c2",
+        "android_client_info": {
+          "package_name": "com.greedy.vincent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307706485095-r27fqf0tstpja4rah76m29s657ac56l7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-jMLvtmNBAyNYdduqeW7tOMCaXj2PI68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307706485095-r27fqf0tstpja4rah76m29s657ac56l7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
