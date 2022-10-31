@@ -68,7 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/introduce"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textColor="#DB45E6"
                 android:layout_marginBottom="3dp"
                 android:layout_marginLeft="5dp"
@@ -95,17 +95,31 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="5dp"
         />
-        <TextView
-                android:text="편의시설 : 전기, 무선인터넷, 장작판매, 온수, 트렘폴린, 물놀이장, 놀이터, 산책로, 운동시설, 마트, 편의점"
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/sbrsCl"
-                android:textStyle="bold"
-                android:textColor="#7E9CD8"
-                android:textSize="12sp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginBottom="5dp"
-        />
+                android:layout_height="34dp">
+            <TextView
+                    android:text="편의시설 : "
+                    android:layout_width="75dp"
+                    android:layout_height="31dp"
+                    android:textSize="12sp"
+                    android:id="@+id/textView4"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:textStyle="bold"
+            />
+            <TextView
+                    android:text="전기, 무선인터넷, 장작판매, 온수, 트렘폴린, 물놀이장, 놀이터, 산책로, 운동시설, 마트, 편의점"
+                    android:layout_width="282dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/sbrsCl"
+                    android:textStyle="bold"
+                    android:textColor="#7E9CD8"
+                    android:textSize="11sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp"
+            />
+        </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -148,8 +162,8 @@
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
 
-            android:layout_width="420dp"
-            android:layout_height="107dp"
+            android:layout_width="416dp"
+            android:layout_height="121dp"
             android:id="@+id/recyclerView"
             app:layout_constraintTop_toTopOf="@+id/linearLayout2"
             android:layout_marginTop="450dp"

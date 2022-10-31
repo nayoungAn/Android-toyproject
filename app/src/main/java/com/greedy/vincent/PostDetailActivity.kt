@@ -8,14 +8,11 @@ import android.view.inputmethod.InputMethodManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.greedy.sqlite.SqliteHelper
-import com.greedy.template.API.Item
 import com.greedy.vincent.databinding.ActivityPostDetailBinding
 
 class PostDetailActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityPostDetailBinding.inflate(layoutInflater) }
-    private lateinit var item: Item
-    private lateinit var itemList: MutableList<Item?>
     val helper = SqliteHelper(this, "comment", 1)
 
 
@@ -47,15 +44,11 @@ class PostDetailActivity : AppCompatActivity() {
 
         Glide.with(binding.imageView2).load(firstImageUrl).into(binding.imageView2)
 
-        /* 메모 저장 버튼 이벤트 */
         binding.saveButton.setOnClickListener {
-            /* 메모 내용이 입력 된 경우만 동작 */
             if (binding.editComment.text.toString().isNotEmpty()) {
                 val comment = Comment(null, binding.editComment.text.toString(), System.currentTimeMillis())
                 helper.insertComment(comment)
 
-                /* DB가 변동 되었을 때 화면도 변동될 수 있도록 adapter의 data를 수정하고
-                *  데이터가 변화 했음을 알린다. */
                 adapter.listData.clear()
                 adapter.listData.addAll(helper.selectComment())
                 adapter.notifyDataSetChanged()
