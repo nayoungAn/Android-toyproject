@@ -34,6 +34,8 @@ class ResultActivity : AppCompatActivity() {
             tab.text = tabTitles[position]
         }.attach()
 
+
+
     }
 
 }
