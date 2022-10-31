@@ -33,9 +33,14 @@ class PostHolder(val binding: PostRecyclerBinding) : RecyclerView.ViewHolder(bin
     init {
         binding.root.setOnClickListener {
             val intent = Intent(it.context, PostDetailActivity::class.java)
-            intent.putExtra("postId", item.contentId)
+
             intent.putExtra("facltNm",item.facltNm)
+            intent.putExtra("induty",item.induty)
+            intent.putExtra("addr1",item.addr1)
+            intent.putExtra("lineIntro",item.lineIntro)
             intent.putExtra("intro", item.intro)
+            intent.putExtra("sbrsCl",item.sbrsCl)
+            intent.putExtra("firstImageUrl", item.firstImageUrl)
             it.context.startActivity(intent)
         }
     }
