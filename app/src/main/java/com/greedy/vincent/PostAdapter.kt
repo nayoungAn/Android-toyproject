@@ -29,11 +29,9 @@ class PostsAdapter(var itemList: MutableList<Item?>) : RecyclerView.Adapter<Post
 class PostHolder(val binding: PostRecyclerBinding) : RecyclerView.ViewHolder(binding.root) {
 
     private lateinit var item: Item
-
     init {
         binding.root.setOnClickListener {
             val intent = Intent(it.context, PostDetailActivity::class.java)
-
             intent.putExtra("facltNm",item.facltNm)
             intent.putExtra("induty",item.induty)
             intent.putExtra("addr1",item.addr1)
@@ -41,12 +39,13 @@ class PostHolder(val binding: PostRecyclerBinding) : RecyclerView.ViewHolder(bin
             intent.putExtra("intro", item.intro)
             intent.putExtra("sbrsCl",item.sbrsCl)
             intent.putExtra("firstImageUrl", item.firstImageUrl)
+            intent.putExtra("contentId",item.contentId)
             it.context.startActivity(intent)
         }
     }
 
     fun setItem(item: Item?) {
-        binding.title.text = "${item?.contentId}. ${item?.facltNm}"
+        binding.title.text = "${item?.facltNm}"
         binding.address.text = "${item?.addr2}"
         binding.address2.text = "${item?.addr1}"
 
