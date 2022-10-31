@@ -1,7 +1,12 @@
 package com.greedy.vincent
 
+import android.R
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
@@ -27,7 +32,7 @@ class ResultActivity : AppCompatActivity() {
         binding.viewPager.adapter = adapter
 
         /* TabLayout 추가 시 작성 */
-        var tabTitles = listOf<String>("MAIN", "LIST", "MYPG", "SET")
+        var tabTitles = listOf<String>("MAIN", "LIST", "MYPG", "INFO")
 
         /* TabLayout과 ViewPager 연결을 위해 TabLayoutMediator를 사용 */
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
@@ -35,5 +40,6 @@ class ResultActivity : AppCompatActivity() {
         }.attach()
 
     }
+
 
 }
