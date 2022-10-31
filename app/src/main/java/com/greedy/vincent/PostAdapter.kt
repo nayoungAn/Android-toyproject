@@ -41,6 +41,7 @@ class PostHolder(val binding: PostRecyclerBinding) : RecyclerView.ViewHolder(bin
             intent.putExtra("intro", item.intro)
             intent.putExtra("sbrsCl",item.sbrsCl)
             intent.putExtra("firstImageUrl", item.firstImageUrl)
+            intent.putExtra("contentId",item.contentId)
             it.context.startActivity(intent)
         }
     }

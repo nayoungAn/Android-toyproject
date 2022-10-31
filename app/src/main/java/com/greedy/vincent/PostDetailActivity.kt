@@ -19,15 +19,15 @@ class PostDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        val contentId = intent.getStringExtra("contentId")
         val adapter = CommentRecyclerAdapter()
         adapter.helper = helper
-        adapter.listData.addAll(helper.selectComment())
+        adapter.listData.addAll(helper.selectComment(contentId!!))
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
-
-
         setListenerToEditText()
+
         val facltNm = intent.getStringExtra("facltNm")
         val intro = intent.getStringExtra("intro")
         val induty = intent.getStringExtra("induty")
@@ -46,11 +46,11 @@ class PostDetailActivity : AppCompatActivity() {
 
         binding.saveButton.setOnClickListener {
             if (binding.editComment.text.toString().isNotEmpty()) {
-                val comment = Comment(null, binding.editComment.text.toString(), System.currentTimeMillis())
+                val comment = Comment(null, contentId!!, binding.editComment.text.toString(), System.currentTimeMillis())
                 helper.insertComment(comment)
 
                 adapter.listData.clear()
-                adapter.listData.addAll(helper.selectComment())
+                adapter.listData.addAll(helper.selectComment(contentId))
                 adapter.notifyDataSetChanged()
 
                 /* 입력란 비우기 */
