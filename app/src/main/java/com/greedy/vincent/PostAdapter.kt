@@ -47,6 +47,9 @@ class PostHolder(val binding: PostRecyclerBinding) : RecyclerView.ViewHolder(bin
 
     fun setItem(item: Item?) {
         binding.title.text = "${item?.contentId}. ${item?.facltNm}"
+        binding.address.text = "${item?.addr2}"
+        binding.address2.text = "${item?.addr1}"
+
         Glide.with(binding.imageView).load(item?.firstImageUrl).into(binding.imageView)
 
         this.item = item!!

@@ -41,6 +41,7 @@ dependencies {
     // image load에 활용하는 라이브러리
     // https://mvnrepository.com/artifact/com.github.bumptech.glide/glide
     implementation group: 'com.github.bumptech.glide', name: 'glide', version: '4.11.0'
+
     implementation platform('com.google.firebase:firebase-bom:31.0.2')
     // Add the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
