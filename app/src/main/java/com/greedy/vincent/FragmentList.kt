@@ -34,7 +34,11 @@ class FragmentList : Fragment() {
         recyclerView = binding.postsView
         loadData()
         return  binding.root
+
+
     }
+
+
 
     private fun loadData() {
 
@@ -49,6 +53,7 @@ class FragmentList : Fragment() {
                     Log.d("Error", "${response.message()}")
                 }
             }
+
             adapter = PostsAdapter(itemList)
             recyclerView.adapter = adapter
             recyclerView.layoutManager = LinearLayoutManager(context)
