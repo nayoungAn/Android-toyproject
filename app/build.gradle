@@ -38,14 +38,18 @@ android {
 
 dependencies {
 
-    //사진첩
-
-    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    // image load에 활용하는 라이브러리
+    // https://mvnrepository.com/artifact/com.github.bumptech.glide/glide
+    implementation group: 'com.github.bumptech.glide', name: 'glide', version: '4.11.0'
 
 
     implementation platform('com.google.firebase:firebase-bom:31.0.2')
 
     implementation 'com.google.firebase:firebase-auth-ktx'
+
+
+    implementation group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.9.0'
+    implementation group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.9.0'
 
 
     implementation 'androidx.core:core-ktx:1.7.0'
