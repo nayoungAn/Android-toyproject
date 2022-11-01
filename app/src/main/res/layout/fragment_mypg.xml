@@ -8,15 +8,6 @@
 		tools:context=".ResultActivity" android:background="#FFFFFF">
 
 
-	<TextView
-			android:text="currentUser"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:id="@+id/currentUser"
-			app:layout_constraintEnd_toStartOf="@+id/btnLogout"
-			app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.588"
-			app:layout_constraintVertical_bias="0.386"/>
 	<Button
 			android:text="로그아웃"
 			android:layout_width="wrap_content"
@@ -25,7 +16,16 @@
 			android:backgroundTint="#306839"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-			android:layout_marginTop="260dp" app:layout_constraintHorizontal_bias="0.773"/>
+			android:layout_marginTop="320dp" app:layout_constraintHorizontal_bias="0.773"/>
+	<Button
+			android:text="등록하기"
+			android:layout_width="104dp"
+			android:layout_height="48dp" android:id="@+id/GalleryButton"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/imageView2"
+			android:backgroundTint="#306839"
+			android:layout_marginTop="20dp"/>
 	<ImageView
 			android:background="@drawable/img"
 			android:layout_width="150dp"
@@ -35,11 +35,21 @@
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
 			android:layout_marginTop="96dp" app:layout_constraintHorizontal_bias="0.498"/>
+	<TextView
+			android:text="currentUser"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/currentUser"
+			android:textSize="20dp"
+			android:textStyle="bold"
+			app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+			app:layout_constraintEnd_toStartOf="@+id/btnLogout" app:layout_constraintTop_toTopOf="@+id/linearLayout"
+			android:layout_marginTop="150dp"/>
 	<LinearLayout
 			android:orientation="vertical"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent" tools:layout_editor_absoluteY="16dp"
-			tools:layout_editor_absoluteX="0dp">
+			android:layout_height="match_parent" tools:layout_editor_absoluteY="35dp"
+			tools:layout_editor_absoluteX="0dp" android:id="@+id/linearLayout">
 		<TextView
 				android:text="My Page"
 				android:layout_width="match_parent"
