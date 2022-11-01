@@ -30,6 +30,7 @@ class FragmentMypg : Fragment() {
     private lateinit var auth: FirebaseAuth
     lateinit var binding: FragmentMypgBinding
     lateinit var Gallerybutton: Button
+
 //   이미지 가져오기
 
 
@@ -80,10 +81,8 @@ class FragmentMypg : Fragment() {
 
 
                     val profileUpdates = userProfileChangeRequest {
-                        displayName = "Jane Q. User"
                         photoUri =
-                            Uri.parse("https://gocamping.or.kr/upload/camp/11/thumb/thumb_720_4031mKP95kUbSSBNbq5bSC5o.jpg")
-                    }
+                            Uri.parse(uri.toString()) }
 
                     user!!.updateProfile(profileUpdates)
                         .addOnCompleteListener { task ->
@@ -94,7 +93,6 @@ class FragmentMypg : Fragment() {
 
 
 
-                    Glide.with(binding.imageView2).load(photoUrl).into(binding.imageView2); //다이얼로그 이미지사진에 넣기
 
 
                 }
