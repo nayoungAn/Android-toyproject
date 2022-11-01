@@ -43,7 +43,7 @@
 		<TextView
 				android:text="My Page"
 				android:layout_width="match_parent"
-				android:layout_height="50dp" android:id="@+id/textView4" android:textColorHint="#009688"
+				android:layout_height="50dp" android:id="@+id/textView4"
 				android:textColor="#FFFFFF" android:textAlignment="center" android:textSize="30sp"
 				android:background="#306839" android:textStyle="bold|italic"/>
 	</LinearLayout>
