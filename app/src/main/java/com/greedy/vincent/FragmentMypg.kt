@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Gallery
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
@@ -31,9 +32,6 @@ class FragmentMypg : Fragment() {
     lateinit var binding: FragmentMypgBinding
     lateinit var Gallerybutton: Button
 
-//   이미지 가져오기
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +48,6 @@ class FragmentMypg : Fragment() {
 
         binding.btnLogout.setOnClickListener {
 
-
             val intent = Intent(this.context, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
@@ -59,12 +56,14 @@ class FragmentMypg : Fragment() {
             auth.signOut()
         }
 
+        //  Firebase 이미지 가져오기
         val photoUrl = auth.currentUser?.photoUrl
-        Glide.with(binding.imageView2).load(photoUrl).into(binding.imageView2); //다이얼로그 이미지사진에 넣기
+        Glide.with(binding.imageView2).load(photoUrl).into(binding.imageView2); //이미지사진 넣기
 
-
+        /* 이미지 버튼 클릭시 */
         imageView = binding.imageView2
         Gallerybutton = binding.GalleryButton
+
         imageView?.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.setType("image/*")
@@ -72,13 +71,13 @@ class FragmentMypg : Fragment() {
             startActivityForResult(intent, REQUEST_CODE);
         }
 
+        /* 등록하기 버튼 클릭시 */
         Gallerybutton.setOnClickListener {
             val user = Firebase.auth.currentUser
             user?.let {
                 for (profile in it.providerData) {
 
                     val photoUrl = profile.photoUrl
-
 
                     val profileUpdates = userProfileChangeRequest {
                         photoUri =
@@ -87,13 +86,10 @@ class FragmentMypg : Fragment() {
                     user!!.updateProfile(profileUpdates)
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
+                                Toast.makeText(binding.root.context,"등록이 완료되었습니다.", Toast.LENGTH_SHORT).show()
                                 Log.d(TAG, "User profile updated.")
                             }
                         }
-
-
-
-
 
                 }
             }
